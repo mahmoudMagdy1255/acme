@@ -1,0 +1,7 @@
+{
+  "name": "acme store",
+  "dependencies": {
+    "foundation-sites": "^6.5.3",
+    "slick-carousel": "^1.8.1"
+  }
+}
