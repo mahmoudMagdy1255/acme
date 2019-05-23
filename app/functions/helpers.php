@@ -41,10 +41,30 @@ if (!function_exists('aurl')) {
 	}
 }
 
+if (!function_exists('asset')) {
+	function asset($url) {
+
+		return getenv('ASSET_URL') . $url;
+
+	}
+}
+
 if (!function_exists('csrf_token')) {
 	function csrf_token() {
 
 		return App\Classes\CSRFToken::_token();
+
+	}
+}
+
+if (!function_exists('slug')) {
+	function slug($value) {
+
+		$value = preg_replace('![^' . preg_quote('_') . '\pL\pN\s]+!u', '', mb_strtolower($value));
+
+		$value = preg_replace('![' . preg_quote('-') . '\s]+!u', '-', $value);
+
+		return trim($value, '-');
 
 	}
 }

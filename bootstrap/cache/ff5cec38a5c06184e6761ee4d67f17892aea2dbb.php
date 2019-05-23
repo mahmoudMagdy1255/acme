@@ -1,3 +1,4 @@
+<?php /* C:\wamp64\www\acme\resources\view/includes/admin-sidebar.blade.php */ ?>
  <div class="off-canvas position-left reveal-for-large nav" id="offCanvas" data-off-canvas>
 
 
@@ -5,7 +6,7 @@
 
  		<div class="image-holder text-center">
 
- 			<img src="{{ asset('/images/avatar.png') }}" alt="terry" title="admin">
+ 			<img src="<?php echo e(asset('/images/avatar.png')); ?>" alt="terry" title="admin">
  			<p>Terry 0.</p>
  		</div>
 

@@ -12,7 +12,7 @@ class IndexController extends BaseController {
 
 		$mail = new Mail;
 
-		$datas = [
+		$data = [
 
 			'to' => getenv('ADMIN_EMAIL'),
 			'subject' => 'Welcome To Acme Store',
