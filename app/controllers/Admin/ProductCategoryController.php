@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Classes\CSRFToken;
 use App\Classes\Request;
+use App\Classes\ValidateRequest;
 use App\Models\Category;
 
 class ProductCategoryController {
@@ -23,6 +24,21 @@ class ProductCategoryController {
 			$request = Request::get('post');
 
 			if (CSRFToken::verifyCSRFToken($request->token)) {
+
+				$rules = [
+
+					'name' => ['required' => true, 'minLength' => 5, 'string' => true, 'unique' => 'categories'],
+
+				];
+
+				$validation = new ValidateRequest;
+
+				$validation->abide($_POST, $rules);
+
+				if ($validation->hasErrors()) {
+					var_dump($validation->getErrors());
+					exit();
+				}
 
 				Category::create([
 
