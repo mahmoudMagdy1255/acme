@@ -9,9 +9,7 @@
 			<h1>Product Categories</h1>
 		</div>
 
-		<?php if($message): ?>
-			<p><?php echo e($message); ?></p>
-		<?php endif; ?>
+		<?php echo $__env->make('includes.messages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 		<div class="row expanded">
@@ -73,17 +71,17 @@
 								<tr>
 
 									<td>
-										<?php echo e($category->name); ?>
+										<?php echo e($category['name']); ?>
 
 									</td>
 
 									<td>
-										<?php echo e($category->slug); ?>
+										<?php echo e($category['slug']); ?>
 
 									</td>
 
 									<td>
-										<?php echo e($category->created_at->toFormattedDateString()); ?>
+										<?php echo e($category['added']); ?>
 
 									</td>
 
@@ -100,6 +98,9 @@
 
 							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 						</tbody>
+
+						<?php echo $links; ?>
+
 
 					</table>
 

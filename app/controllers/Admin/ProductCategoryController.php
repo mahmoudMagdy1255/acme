@@ -9,11 +9,22 @@ use App\Models\Category;
 
 class ProductCategoryController {
 
+	protected $categories;
+	protected $links;
+
+	public function __construct() {
+
+		$total_record = Category::all()->count();
+
+		$object = new Category;
+
+		list($this->categories, $this->links) = paginate(2, $total_record, 'categories', $object);
+
+	}
+
 	public function show() {
 
-		$categories = Category::all();
-
-		return view('admin/products/categories', compact('categories'));
+		return view('admin/products/categories', ['categories' => $this->categories, 'links' => $this->links]);
 
 	}
 
@@ -36,8 +47,9 @@ class ProductCategoryController {
 				$validation->abide($_POST, $rules);
 
 				if ($validation->hasErrors()) {
-					var_dump($validation->getErrors());
-					exit();
+
+					$errors = $validation->getErrors();
+
 				}
 
 				Category::create([
@@ -47,11 +59,8 @@ class ProductCategoryController {
 
 				]);
 
-				$categories = Category::all();
-
-				$message = 'Category Created';
-
-				return view('admin/products/categories', compact('categories', 'message'));
+				return view('admin/products/categories',
+					['categories' => $this->categories, 'errors' => $errors, 'success' => 'Created Successfully', 'links' => $this->links]);
 
 			}
 

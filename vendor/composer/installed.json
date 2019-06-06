@@ -560,17 +560,17 @@
     },
     {
         "name": "nesbot/carbon",
-        "version": "2.14.2",
-        "version_normalized": "2.14.2.0",
+        "version": "2.19.1",
+        "version_normalized": "2.19.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/briannesbitt/Carbon.git",
-            "reference": "a1f4f9abcde8241ce33bf5090896e9c16d0b4232"
+            "reference": "5cf102d1476fdf92f1f991bd1a1a0d93c65755ca"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/a1f4f9abcde8241ce33bf5090896e9c16d0b4232",
-            "reference": "a1f4f9abcde8241ce33bf5090896e9c16d0b4232",
+            "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5cf102d1476fdf92f1f991bd1a1a0d93c65755ca",
+            "reference": "5cf102d1476fdf92f1f991bd1a1a0d93c65755ca",
             "shasum": ""
         },
         "require": {
@@ -580,13 +580,13 @@
         },
         "require-dev": {
             "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
-            "kylekatarnls/multi-tester": "^0.1",
+            "kylekatarnls/multi-tester": "^1.1",
             "phpmd/phpmd": "^2.6",
-            "phpstan/phpstan": "^0.10.8",
+            "phpstan/phpstan": "^0.11",
             "phpunit/phpunit": "^7.5 || ^8.0",
             "squizlabs/php_codesniffer": "^3.4"
         },
-        "time": "2019-02-28T09:07:12+00:00",
+        "time": "2019-06-04T20:07:46+00:00",
         "type": "library",
         "extra": {
             "laravel": {
@@ -1360,6 +1360,65 @@
             "dotenv",
             "env",
             "environment"
+        ]
+    },
+    {
+        "name": "voku/pagination",
+        "version": "3.0.1",
+        "version_normalized": "3.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/voku/pagination.git",
+            "reference": "bb44b5d0814b10b5efcde5542993c3ce5065fe5d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/voku/pagination/zipball/bb44b5d0814b10b5efcde5542993c3ce5065fe5d",
+            "reference": "bb44b5d0814b10b5efcde5542993c3ce5065fe5d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~6.0|~7.0"
+        },
+        "time": "2018-10-07T01:22:14+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "voku\\helper\\": "src/voku/helper/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Lars Moelleken",
+                "email": "lars@moelleken.org",
+                "homepage": "http://www.moelleken.org/",
+                "role": "Fork-Maintainer"
+            },
+            {
+                "name": "David Carr",
+                "email": "dave@daveismyname.com",
+                "homepage": "http://www.daveismyname.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Pagination, without a database dependency",
+        "keywords": [
+            "pager",
+            "pagination",
+            "paginator"
         ]
     }
 ]

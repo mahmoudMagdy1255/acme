@@ -10,9 +10,7 @@
 			<h1>Product Categories</h1>
 		</div>
 
-		@if($message)
-			<p>{{ $message }}</p>
-		@endif
+		@include('includes.messages')
 
 
 		<div class="row expanded">
@@ -74,15 +72,15 @@
 								<tr>
 
 									<td>
-										{{ $category->name }}
+										{{ $category['name'] }}
 									</td>
 
 									<td>
-										{{ $category->slug }}
+										{{ $category['slug'] }}
 									</td>
 
 									<td>
-										{{ $category->created_at->toFormattedDateString() }}
+										{{ $category['added'] }}
 									</td>
 
 
@@ -98,6 +96,8 @@
 
 							@endforeach
 						</tbody>
+
+						{!! $links !!}
 
 					</table>
 

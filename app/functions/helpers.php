@@ -1,7 +1,9 @@
 <?php
 
+use Carbon\Carbon;
+use Illuminate\Database\Capsule\Manager as Capsule;
 use Philo\Blade\Blade;
-
+use voku\helper\Paginator;
 if (!function_exists('view')) {
 	function view($path, array $data = []) {
 
@@ -73,6 +75,35 @@ if (!function_exists('dd')) {
 	function dd($value) {
 
 		var_dump($value);die();
+
+	}
+}
+
+if (!function_exists('paginate')) {
+	function paginate($num_of_records, $total_record, $table_name, $object) {
+
+		$array = [];
+
+		$pages = new Paginator($num_of_records, 'p');
+
+		$pages->set_total($total_record);
+
+		$data = Capsule::select("SELECT * FROM $table_name ORDER BY created_at DESC " . $pages->get_limit());
+
+		foreach ($data as $item) {
+
+			array_push($array, [
+
+				'id' => $item->id,
+				'name' => $item->name,
+				'slug' => $item->slug,
+				'added' => (new Carbon($item->created_at))->toFormattedDateString(),
+
+			]);
+
+		}
+
+		return [$array, $pages->page_links()];
 
 	}
 }

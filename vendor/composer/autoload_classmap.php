@@ -7,12 +7,20 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AltoRouter' => $vendorDir . '/altorouter/altorouter/AltoRouter.php',
+    'App\\Classes\\CSRFToken' => $baseDir . '/app/classes/CSRFToken.php',
     'App\\Classes\\Database' => $baseDir . '/app/classes/Database.php',
     'App\\Classes\\ErrorHandler' => $baseDir . '/app/classes/ErrorHandler.php',
     'App\\Classes\\Mail' => $baseDir . '/app/classes/Mail.php',
+    'App\\Classes\\Redirect' => $baseDir . '/app/classes/Redirect.php',
+    'App\\Classes\\Request' => $baseDir . '/app/classes/Request.php',
+    'App\\Classes\\Session' => $baseDir . '/app/classes/Session.php',
+    'App\\Classes\\UploadFile' => $baseDir . '/app/classes/UploadFile.php',
+    'App\\Classes\\ValidateRequest' => $baseDir . '/app/classes/ValidateRequest.php',
     'App\\Controllers\\Admin\\DashboardController' => $baseDir . '/app/controllers/Admin/DashboardController.php',
+    'App\\Controllers\\Admin\\ProductCategoryController' => $baseDir . '/app/controllers/Admin/ProductCategoryController.php',
     'App\\Controllers\\BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'App\\Controllers\\IndexController' => $baseDir . '/app/controllers/IndexController.php',
+    'App\\Models\\Category' => $baseDir . '/app/models/Category.php',
     'App\\RouteDispatcher' => $baseDir . '/app/routing/RouteDispatcher.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
@@ -563,4 +571,6 @@ return array(
     'Whoops\\Util\\Misc' => $vendorDir . '/filp/whoops/src/Whoops/Util/Misc.php',
     'Whoops\\Util\\SystemFacade' => $vendorDir . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
     'Whoops\\Util\\TemplateHelper' => $vendorDir . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+    'voku\\helper\\Paginator' => $vendorDir . '/voku/pagination/src/voku/helper/Paginator.php',
+    'voku\\helper\\PaginatorHelper' => $vendorDir . '/voku/pagination/src/voku/helper/PaginatorHelper.php',
 );
